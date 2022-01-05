@@ -67,3 +67,6 @@ if ! bash debtap "vscode.deb";then
   "rm" "vscode.deb"
   error 'Convert deb Failed.'
 fi
+# 可以尝试使用如下脚本在{YOU_TARGET_DIR}目录中生成vscode.pkg包.
+# {YOU_TARGET_DIR}建议是一个空目录.安装完毕后可自行删除
+# docker run --rm -it -v {YOU_TARGET_DIR}:/root/ archlinux bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/shell/vscode-deb2pkg.sh)
