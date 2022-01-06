@@ -5,3 +5,4 @@
 ## 目录
 * [将VsCode的Deb包转换为pkg包](/shell/vscode-deb2pkg.sh)
 * [Ububtu下安装docker脚本](/shell/ubuntu-install-docker.sh)
+* [Ububtu下以ppa源安装Vscode脚本](/shell/ubuntu-install-vscode-ppa.sh)
