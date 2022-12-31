@@ -6,7 +6,7 @@ df -h | awk '$NF=="/"{printf "磁盘使用: %d/%dGB (%s)\n", $3,$2,$5}'
 alias uuid='cat /proc/sys/kernel/random/uuid | sed "s/-//g"'
 
 # deps scrcpy
-alias scrcpy='scrcpy --push-target /storage/emulated/0/Download/ -m 1080 -b 4M'
+alias scrcpy='scrcpy --push-target /storage/emulated/0/Download/ -m 1080 -b 4M --hid-keyboard --turn-screen-off'
 
 # deps git
 alias git-proxy='git config --global http.proxy socks://127.0.0.1:1089'
