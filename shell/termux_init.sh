@@ -40,9 +40,6 @@ $HOME/.termux/fonts.sh
 
 # 配置.zshrc
 echo "termux-wake-lock" >> "$HOME/.zshrc"
-echo "alias dk='ssh orange@192.168.127.5 bash /home/orange/quick.sh'" >> "$HOME/.zshrc"
-echo "alias dk2='ssh orange@192.168.127.5 bash /home/orange/daka.sh'" >> "$HOME/.zshrc"
-echo "alias tu='scp orange@192.168.127.5:/home/orange/*.png ~/storage/downloads/'" >> "$HOME/.zshrc"
 
 echo "Please restart Termux app..."
 # 开启sshd
