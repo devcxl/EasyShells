@@ -15,4 +15,4 @@ alias git-unproxy='git config --global --unset https.proxy'
 
 # deps docker
 alias redis-server='docker run --rm -it --network host redis:5-alpine redis-server'
-alias mysql-server='docker run --rm -d --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -e TZ=Asia/Shanghai --network host mysql:5.7.31'
+alias mysql-server='docker run --rm -d --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -e TZ=Asia/Shanghai --network host mysql:5.7.31 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci'
