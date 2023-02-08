@@ -2,18 +2,10 @@
 lightgreen='\e[1;32m'
 lightred='\e[1;31m'
 red='\e[0;31m'
-lightblue='\e[1;34m'
+lightyellow='\e[1;33m'
 NC='\e[0m'
 bold=`tput bold`
 normal=`tput sgr0`
-
-# 默认安装位置
-INSTALL_DIR="$HOME/apps/"
-
-# 通过curl模拟请求获取最新版本vscode实际下载地址
-RE302=$(curl -s 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' -H 'Accept-Language: zh-CN' -H 'Accept-Encoding: gzip, deflate, br' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: none' -H 'Sec-Fetch-User: ?1' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache')
-DOWNLOAD_LINK=$(echo $RE302 | grep -Eo "(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|\!:,.;]+[-A-Za-z0-9+&@#/%=~_|]" | head -1)
-
 info(){
     echo -e "${lightgreen}info:${NC} ${bold}$1${normal}"
 }
@@ -21,6 +13,15 @@ error(){
     echo -e "${lightred}error:${NC} ${bold}$1${normal}"
     exit 1
 }
+warn(){
+    echo -e "${lightyellow}error:${NC} ${bold}$1${normal}"
+}
+# 默认安装位置
+INSTALL_DIR="$HOME/apps/"
+
+# 通过curl模拟请求获取最新版本vscode实际下载地址
+RE302=$(curl -s 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' -H 'Accept-Language: zh-CN' -H 'Accept-Encoding: gzip, deflate, br' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: none' -H 'Sec-Fetch-User: ?1' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache')
+DOWNLOAD_LINK=$(echo $RE302 | grep -Eo "(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|\!:,.;]+[-A-Za-z0-9+&@#/%=~_|]" | head -1)
 
 info "Donwloading VsCode ... $DOWNLOAD_LINK"
 if [ -f /tmp/vscode.tar.gz ];then
