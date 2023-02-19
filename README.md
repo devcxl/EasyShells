@@ -2,7 +2,7 @@
 
 记录一些简单的Shell脚本
 
-Use CDN: `https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/shell/xxx.sh`
+Use CDN: `https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/shell/`
 
 ## 目录
 * [安装/更新VsCode](/shell/vscode-update.sh)
