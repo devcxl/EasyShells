@@ -63,4 +63,5 @@ main(){
     download
     install
 }
+main "$@"
 # usage: bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/vscode-update.sh)
