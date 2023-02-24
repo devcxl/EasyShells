@@ -1,4 +1,13 @@
 #!/bin/bash
+#deps:aria2install/check_if_running_as_root.sh
+#deps:aria2install/identify_the_operating_system_and_architecture.sh
+#deps:aria2install/judgment_parameters.sh
+#deps:aria2install/read_install_param.sh
+#deps:aria2install/config_conf.sh
+#deps:aria2install/install.sh
+#deps:aria2install/remove.sh
+#deps:aria2install/reconfig.sh
+#deps:aria2install/help.sh
 main() {
     # 检查root权限
     check_if_running_as_root
