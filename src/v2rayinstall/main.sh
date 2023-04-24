@@ -5,6 +5,7 @@
 #deps:v2rayinstall/param_parse.sh
 #deps:common/random_port.sh
 #deps:v2rayinstall/relay.sh
+#deps:v2rayinstall/direct.sh
 #deps:v2rayinstall/help.sh
 
 main() {
@@ -16,6 +17,7 @@ main() {
     [[ "$HELP" -eq '1' ]] && help
 
     [[ "$RELAY" -eq '1' ]] && relay "$@"
+    [[ "$DIRECT" -eq '1' ]] && direct "$@"
 
 }
 
