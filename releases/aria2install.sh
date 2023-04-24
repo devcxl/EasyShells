@@ -353,7 +353,7 @@ remove            卸载Aria2
 install           安装Aria2
 EOF
 }
-#deps:aria2install/check_if_running_as_root.sh
+#deps:common/check_if_running_as_root.sh
 #deps:aria2install/identify_the_operating_system_and_architecture.sh
 #deps:aria2install/judgment_parameters.sh
 #deps:aria2install/read_install_param.sh

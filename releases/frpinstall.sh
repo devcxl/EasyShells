@@ -309,7 +309,7 @@ client                  FRPC相关option:
 EOF
 }
 #deps:common/color.sh
-#deps:frpinstall/check_if_running_as_root.sh
+#deps:common/check_if_running_as_root.sh
 #deps:frpinstall/identify_the_operating_system_and_architecture.sh
 #deps:frpinstall/download.sh
 #deps:frpinstall/client.sh
