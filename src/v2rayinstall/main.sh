@@ -4,12 +4,13 @@
 #deps:v2rayinstall/init.sh
 #deps:v2rayinstall/param_parse.sh
 #deps:common/random_port.sh
+#deps:v2rayinstall/relay.sh
 #deps:v2rayinstall/help.sh
 
 main() {
     init
     param_parse "$@"
-    check_if_running_as_root
+    # check_if_running_as_root
     identify_the_operating_system_and_architecture
 
     [[ "$HELP" -eq '1' ]] && help
