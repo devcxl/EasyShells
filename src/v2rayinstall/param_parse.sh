@@ -11,25 +11,40 @@ param_parse(){
         '-h' | '--help' | '-help' | 'help')
             HELP='1'
             ;;
-        '-d' | '--dir')
-            DIR="${2:?error: path error.}"
+        '-p' | '--in-port')
+            IN_PORT="${2:?error: IN_PORT error.}"
             shift
             ;;
-        '-c' | '--client-name')
-            CLIENT_NAME="${2:?error: client name error.}"
+        '-uid' | '--in-uuid')
+            IN_UUID="${2:?error: IN_UUID error.}"
             shift
             ;;
-        '-s' | '--server-name')
-            SERVER_NAME="${2:?error: client name error.}"
+        '-path' | '--in-websocket-path')
+            IN_WS_PATH="${2:?error: IN_WS_PATH error.}"
             shift
             ;;
-        '-p' | '--passphrase')
-            PASSPHRASE="${2}"
+        '-D' | '--out-domain')
+            OUT_DOMAIN="${2:?error: OUT_DOMAIN error.}"
             shift
             ;;
-        '-C' | '--copy-id')
-            COPY_FLAG=1
-            COPY_2_ADDRESS="${2}"
+        '-P' | '--out-port')
+            OUT_PORT="${2:?error: OUT_PORT error.}"
+            shift
+            ;;
+        '-UID' | '--out-uuid' )
+            OUT_UUID="${2:?error: OUT_UUID error.}"
+            shift
+            ;;
+        '-PATH' | '--out-websocket-path' )
+            OUT_WS_PATH="${2:?error: OUT_WS_PATH error.}"
+            shift
+            ;;
+        '-d' | '--domain'  )
+            SERVER_DOMAIN="${2:?error: SERVER_DOMAIN error.}"
+            shift
+            ;;
+        '-t' | '--tls' )
+            TLS_FLAG=1
             shift
             ;;
         *)

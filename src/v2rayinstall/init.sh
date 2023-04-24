@@ -1,0 +1,1 @@
+V2RAY_CONFIG_PATH='/usr/local/etc/v2ray/config.json'
