@@ -6,7 +6,7 @@
     },
     "inbounds": [
         {
-            "port": "{IN_PORT}",
+            "port": {IN_PORT},
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -20,7 +20,7 @@
             "streamSettings": {
                 "network": "ws",
                 "wsSettings": {
-                    "path": "{WS_PATH}"
+                    "path": "{IN_WS_PATH}"
                 }
             }
         }
@@ -32,7 +32,7 @@
                 "vnext": [
                     {
                         "address": "{OUT_DOMAIN}",
-                        "port": "{OUT_PORT}",
+                        "port": {OUT_PORT},
                         "users": [
                             {
                                 "id": "{OUT_UUID}"
