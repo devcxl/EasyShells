@@ -20,7 +20,7 @@
             "streamSettings": {
                 "network": "ws",
                 "wsSettings": {
-                    "path": "{IN_WS_PATH}"
+                    "path": "/{IN_WS_PATH}"
                 }
             }
         }
@@ -45,7 +45,7 @@
                 "network": "ws",
                 "security": "tls",
                 "wsSettings": {
-                    "path": "{OUT_WS_PATH}"
+                    "path": "/{OUT_WS_PATH}"
                 }
             },
             "tag": "proxy"

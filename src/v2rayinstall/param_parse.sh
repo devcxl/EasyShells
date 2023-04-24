@@ -45,7 +45,6 @@ param_parse(){
             ;;
         '-t' | '--tls' )
             TLS_FLAG=1
-            shift
             ;;
         *)
             error "$0: unknown option $1"
