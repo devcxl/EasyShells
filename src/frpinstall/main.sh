@@ -1,7 +1,7 @@
 #!/bin/bash
 #deps:common/color.sh
 #deps:common/check_if_running_as_root.sh
-#deps:frpinstall/identify_the_operating_system_and_architecture.sh
+#deps:common/identify_the_operating_system_and_architecture.sh
 #deps:frpinstall/download.sh
 #deps:frpinstall/client.sh
 #deps:frpinstall/server.sh
