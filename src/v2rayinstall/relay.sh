@@ -47,6 +47,8 @@ relay(){
     fi
     sed -i "s/{OUT_WS_PATH}/$OUT_WS_PATH/g" $V2RAY_CONFIG_PATH
 
+    info "port: $IN_PORT ,uuid: $IN_UUID ,ws-path: /$IN_WS_PATH"
+
     # warn: v2ray version must > 5
     if  v2ray test -c $V2RAY_CONFIG_PATH ;then
         info 'config.json verify successful.'
