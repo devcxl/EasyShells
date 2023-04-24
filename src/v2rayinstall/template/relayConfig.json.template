@@ -1,0 +1,120 @@
+{
+    "log": {
+        "loglevel": "warning",
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log"
+    },
+    "inbounds": [
+        {
+            "port": "{IN_PORT}",
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "{IN_UUID}",
+                        "security": "auto",
+                        "level": 0
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "{WS_PATH}"
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "{OUT_DOMAIN}",
+                        "port": "{OUT_PORT}",
+                        "users": [
+                            {
+                                "id": "{OUT_UUID}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "wsSettings": {
+                    "path": "{OUT_WS_PATH}"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "routing": {
+        "domainStrategy": "IPOnDemand",
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "block",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "ip": [
+                    "geoip:cn",
+                    "geoip:private"
+                ],
+                "domain": [
+                    "geosite:adcolony-ads",
+                    "geosite:google-ads",
+                    "geosite:baidu-ads",
+                    "geosite:tencent-ads",
+                    "geosite:alibaba-ads",
+                    "geosite:category-ads",
+                    "geosite:category-ads-all"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "domain": [
+                    "geosite:bilibili",
+                    "geosite:tencent",
+                    "geosite:alibaba",
+                    "geosite:baidu",
+                    "geosite:bing",
+                    "geosite:zhihu",
+                    "domain:ifconfig.me",
+                    "domain:qq.com"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "proxy",
+                "domain": [
+                    "geosite:google",
+                    "geosite:github",
+                    "geosite:discord",
+                    "geosite:netflix",
+                    "geosite:steam",
+                    "geosite:telegram",
+                    "geosite:speedtest",
+                    "geosite:wikimedia",
+                    "domain:textnow.com",
+                    "domain:twitch.tv",
+                    "domain:wikileaks.org",
+                    "domain:naver.com",
+                    "domain:speedtest.net"
+                ]
+            }
+        ]
+    }
+}
