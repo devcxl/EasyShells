@@ -354,7 +354,7 @@ install           安装Aria2
 EOF
 }
 #deps:common/check_if_running_as_root.sh
-#deps:aria2install/identify_the_operating_system_and_architecture.sh
+#deps:common/identify_the_operating_system_and_architecture.sh
 #deps:aria2install/judgment_parameters.sh
 #deps:aria2install/read_install_param.sh
 #deps:aria2install/config_conf.sh
