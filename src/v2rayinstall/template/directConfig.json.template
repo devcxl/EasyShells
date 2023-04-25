@@ -1,0 +1,68 @@
+{
+    "log": {
+        "loglevel": "warning",
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log"
+    },
+    "inbounds": [
+        {
+            "port": {IN_PORT},
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "{IN_UUID}",
+                        "security": "auto",
+                        "level": 0
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/{IN_WS_PATH}"
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "domainMatcher": "mph",
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "block",
+                "protocol": [
+                    "bittorrent"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "block",
+                "domain": [
+                    "geosite:cn",
+                    "geosite:baidu",
+                    "geosite:baidu-ads",
+                    "geosite:bing",
+                    "geosite:zhihu",
+                    "geosite:category-ads",
+                    "geosite:category-ads-all"
+                ],
+                "ip": [
+                    "geoip:cn",
+                    "geoip:private"
+                ]
+            }
+        ]
+    }
+}
