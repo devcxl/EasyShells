@@ -275,8 +275,15 @@ direct(){
         warn 'Are you sure not to use TLS encryption?'
     else
         install_software 'python3'
-        install_software 'python3-venv'
-        install_software 'libaugeas0'
+        if ! install_software 'python3-venv';then
+            warn 'install python3-venv error'
+        fi
+        if ! install_software 'libaugeas0';then
+            warn 'install libaugeas0 error'
+        fi
+        if ! install_software 'augeas-libs';then
+            warn 'install augeas-libs error'
+        fi
         python3 -m venv /opt/certbot/
         /opt/certbot/bin/pip install --upgrade pip
         /opt/certbot/bin/pip install certbot certbot
