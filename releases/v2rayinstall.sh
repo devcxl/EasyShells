@@ -260,7 +260,7 @@ direct(){
     fi
     sed -i "s/{IN_UUID}/$IN_UUID/g" $V2RAY_CONFIG_PATH
     if [ -z "$IN_WS_PATH" ]; then
-        IN_WS_PATH=/$(openssl rand -hex 16)
+        IN_WS_PATH=$(openssl rand -hex 16)
     fi
     sed -i "s/{IN_WS_PATH}/$IN_WS_PATH/g" $V2RAY_CONFIG_PATH
     curl -o $NGINX_CONFIG_PATH -L https://raw.githubusercontent.com/devcxl/EasyShells/master/src/v2rayinstall/template/v2ray.conf.template
