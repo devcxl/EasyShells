@@ -128,7 +128,6 @@ install_software() {
         echo "info: $package_name is installed."
     else
         echo "error: Installation of $package_name failed, please check your network."
-        exit 1
     fi
 }
 V2RAY_CONFIG_PATH='/usr/local/etc/v2ray/config.json'
