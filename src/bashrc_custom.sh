@@ -19,3 +19,7 @@ alias mysql-server='docker run --rm -d --name mysql -e MYSQL_ROOT_PASSWORD=12345
 
 # befor `bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/shell/vscode-update.sh)`
 alias code='$HOME/apps/VSCode-linux-x64/bin/code'
+
+# Python export & install deps
+alias py-export='pip freeze > requirements.txt'
+alias py-install='pip install -r requirements.txt'
