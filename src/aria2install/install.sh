@@ -52,7 +52,7 @@ install_aria2_conf() {
 log-level=warn
 log=/var/log/aria2/aria2.log
 # 后台运行
-# daemon=true
+daemon=true
 dir=/data/download
 input-file=/var/log/aria2/aria2.session
 save-session=/var/log/aria2/aria2.session
