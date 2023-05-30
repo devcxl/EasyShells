@@ -1,6 +1,6 @@
-# Aria2安装脚本
+# 一键安装Aria2
 
-系统要求
+## 系统要求
 * Centos7+: `curl` , `yum`/`dnf` , `systemd`
 * Centos8: `curl` , `yum`/`dnf` , `systemd`
 * ArchLinux: `curl` , `pacman` , `systemd`
@@ -9,22 +9,34 @@
 
 > Centos系统将会安装`epel-release`仓库
 
-使用方式:
+## 使用方式:
 
 ```
-[install-release.sh] Usage: install-release.sh Command
+[aria2install.sh] Usage: aria2install.sh Command
 help              使用帮助
 version           当前安装的Aria2版本信息
 remove            卸载Aria2
 install           安装Aria2
-reconfig          重新配置Aria2
 ```
 
-安装
+## 安装
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/release.sh) install`
+`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/aria2install.sh) install`
 
-卸载
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/Aria2Install@master/release.sh) remove`
+## 修改配置
 
+configuration path `/etc/aria2/aria2.conf`
+
+## Run in background
+
+`sudo systemctl start aria2c.service`
+
+## 卸载
+
+`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/Aria2Install@master/releases/aria2install.sh) remove`
+
+
+## 相关
+
+* https://github.com/mayswind/AriaNg
