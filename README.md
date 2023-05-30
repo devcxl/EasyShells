@@ -8,8 +8,8 @@ CDN: `https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/`
 
 ## 目录
 
-* [一键安装Aria2](src/aria2install)
-* [一键安装FRP](src/frpinstall)
+* [一键安装配置Aria2](src/aria2install)
+* [一键安装配置FRP](src/frpinstall)
 * [一键生成ssh私钥](src/keygen)
 * [一键安装配置代理](src/v2rayinstall)
 * [一键安装/更新VsCode](/src/vscode-update)
@@ -20,7 +20,14 @@ CDN: `https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/`
 * [Termux初始化脚本](/src/termux_init.sh)
 
 
-## merge 示例
+## merge
+
+这个脚本主要功能就是将脚本项目中由`#deps:`标注依赖的脚本与`main.sh`合并为一个release脚本。
+
+用来减少不必要的工作量，优化脚本编写体验，就像Python的导包一样，非常舒服。
+
+
+以下是一些示例：
 
 * 合并frpinstall并输出到releases目录
     
