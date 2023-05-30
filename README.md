@@ -12,7 +12,7 @@ CDN: `https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/`
 * [一键安装FRP](src/frpinstall)
 * [一键生成ssh私钥](src/keygen)
 * [一键安装配置代理](src/v2rayinstall)
-* [安装/更新VsCode](/releases/vscode-update.sh)
+* [一键安装/更新VsCode](/src/vscode-update)
 
 * [Ububtu下安装docker脚本](/src/ubuntu-install-docker.sh)
 * [Ububtu下以ppa源安装Vscode脚本](/src/ubuntu-install-vscode-ppa.sh)
