@@ -1,6 +1,6 @@
 #!/bin/bash
 server(){
-    if ! mkdir "$DIR";then
+    if ! mkdir -p "$DIR";then
         error "Failed to create directory: $DIR . Please check whether you have permission to this directory"
     else
             if ssh-keygen -t rsa -b 4096 -C "server:$SERVER_NAME client:$CLIENT_NAME at $DATE ip:$IP" -f "$DIR/id_rsa_$SERVER_NAME" -N '';then
