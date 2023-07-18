@@ -18,10 +18,10 @@ alias git-user='git config user.name'
 alias git-mail='git config user.email'
 
 # deps docker
-alias redis-server='docker run --rm -it --network host redis:5-alpine redis-server --requirepass 123456'
+alias redis-server='docker run --rm -d --network host redis:5-alpine redis-server --requirepass 123456'
 alias mysql-server='docker run --rm -d --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -e TZ=Asia/Shanghai --network host mysql:5.7.31 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci'
 
-# befor `bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/shell/vscode-update.sh)`
+# befor `bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/vscode-update.sh)`
 alias code='$HOME/apps/VSCode-linux-x64/bin/code'
 
 # Python export & install deps
