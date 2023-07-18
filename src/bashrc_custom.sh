@@ -1,4 +1,5 @@
 # Linux Custom Terminal
+# Useage: curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/src/bashrc_custom.sh >> $HOME/.bashrc
 echo -e "用户：${USER} "
 date "+%Y年%B%d日%A %T"
 free -h | awk 'NR==2{printf "内存使用: %s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
