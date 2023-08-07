@@ -1,0 +1,1 @@
+# (crontab -l ; echo "0 1 * * * /path/to/myscript.sh") | crontab -
