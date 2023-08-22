@@ -45,18 +45,25 @@ install_desktop_and_application(){
         mkdir -p $HOME/.local/share/applications/
     fi
 
-cat > $HOME/.local/share/applications/vscode.desktop <<EOF
+cat > $HOME/.local/share/applications/code.desktop <<EOF
 [Desktop Entry]
-Version=1.0
-Type=Application
-Name=Visual Studio Code Application
-Comment=
-Exec=$INSTALL_DIR/VSCode-linux-x64/bin/code
+Name=Visual Studio Code
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=$INSTALL_DIR/VSCode-linux-x64/bin/code --unity-launch %F
 Icon=$INSTALL_DIR/VSCode-linux-x64/resources/app/resources/linux/code.png
-Path=
-Terminal=false
-StartupNotify=true
 Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Exec=$INSTALL_DIR/VSCode-linux-x64/bin/code --new-window %F
+Icon=$INSTALL_DIR/VSCode-linux-x64/resources/app/resources/linux/code.png
 EOF
 }
 
