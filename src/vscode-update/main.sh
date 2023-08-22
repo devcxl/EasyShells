@@ -39,11 +39,33 @@ install(){
     fi
 }
 
+install_desktop_and_application(){
+    info "Install Desktop Application ..."
+    if [ ! -d $HOME/.local/share/applications/ ]; then
+        mkdir -p $HOME/.local/share/applications/
+    fi
+
+cat > $HOME/.local/share/applications/vscode.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Visual Studio Code Application
+Comment=
+Exec=$INSTALL_DIR/VSCode-linux-x64/bin/code
+Icon=$INSTALL_DIR/VSCode-linux-x64/resources/app/resources/linux/code.png
+Path=
+Terminal=false
+StartupNotify=true
+Type=Application
+EOF
+}
+
 #deps:common/color.sh
 main(){
     get_download_url
     download
     install
+    install_desktop_and_application
 }
 
 main "$@"
