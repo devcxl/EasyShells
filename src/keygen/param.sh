@@ -3,6 +3,9 @@ param_parse(){
     while [[ "$#" -gt '0' ]]; do
         case $1 in
 
+        'gitee')
+            GITEE='1'
+            ;;
         'github')
             GITHUB='1'
             ;;

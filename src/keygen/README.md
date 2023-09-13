@@ -11,6 +11,9 @@
 ```
 [keygen.sh] Usage: keygen.sh <Command> <option>
 -h | --help | -help | help      使用帮助
+gitee                           为Gitee生成ed25519类型的key
+    -c | --client-name          客户端名称(将来使用key的客户端) default: $(cat /etc/hostname)
+    -d | --dir                  输出文件夹 default: $HOME/.ssh/$CLIENT_NAME
 github                          为Github生成ed25519类型的key
     -c | --client-name          客户端名称(将来使用key的客户端) default: $(cat /etc/hostname)
     -d | --dir                  输出文件夹 default: $HOME/.ssh/$CLIENT_NAME
