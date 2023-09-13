@@ -32,6 +32,9 @@ init(){
 param_parse(){
     while [[ "$#" -gt '0' ]]; do
         case $1 in
+        'gitee')
+            GITEE='1'
+            ;;
         'github')
             GITHUB='1'
             ;;
@@ -78,6 +81,15 @@ github(){
         error "Failed to generate Github private key." 
     fi
 }
+gitee(){
+    if ssh-keygen -t ed25519 -C "gitee key client:$CLIENT_NAME at $DATE ip:$IP " -f "$DIR/id_ed25519_gitee" -N '';then
+        info "==Successfully generated the private key of Gitee for $CLIENT_NAME!=="
+        cat "$DIR/id_ed25519_gitee.pub"
+        info "==[https://gitee.com/profile/sshkeys]=="
+    else
+        error "Failed to generate Gitee private key." 
+    fi
+}
 server(){
     if ! mkdir -p "$DIR";then
         error "Failed to create directory: $DIR . Please check whether you have permission to this directory"
@@ -104,6 +116,9 @@ cat <<EOF
 github                          为Github生成ed25519类型的key
     -c | --client-name          客户端名称(将来使用key的客户端) default: $(cat /etc/hostname)
     -d | --dir                  输出文件夹 default: $HOME/.ssh/$CLIENT_NAME
+gitee                           为Gitee生成ed25519类型的key
+    -c | --client-name          客户端名称(将来使用key的客户端) default: $(cat /etc/hostname)
+    -d | --dir                  输出文件夹 default: $HOME/.ssh/$CLIENT_NAME
 server                          为服务器生成rsa类型4096长度的key
     -d | --dir                  输出文件夹 default: $HOME/.ssh/$CLIENT_NAME
     -c | --client-name          客户端名称 default: $(cat /etc/hostname)
@@ -116,6 +131,7 @@ EOF
 #deps:keygen/init.sh
 #deps:keygen/param.sh
 #deps:keygen/github.sh
+#deps:keygen/gitee.sh
 #deps:keygen/server.sh
 #deps:keygen/help.sh
 main(){
@@ -123,6 +139,7 @@ main(){
     param_parse "$@"
     [[ "$HELP" -eq '1' ]] && help
     [[ "$GITHUB" -eq '1' ]] && github "$@"
+    [[ "$GITEE" -eq '1' ]] && gitee "$@"
     [[ "$SERVER" -eq '1' ]] && server "$@"
     
 }
