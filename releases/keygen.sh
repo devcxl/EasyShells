@@ -19,7 +19,7 @@ warn(){
 debug(){
     echo -e "${lightyellow}debug:${NC} ${bold}------=========$1=========------${normal}"
 }
-init(){
+init() {
     # default hostname
     CLIENT_NAME=$(cat /etc/hostname)
     # default key dir
@@ -71,6 +71,11 @@ param_parse(){
         esac
         shift
     done
+    if [ -d $DIR ]; then
+        info "$DIR exist"
+    else
+        mkdir -p $DIR
+    fi
 }
 github(){
     if ssh-keygen -t ed25519 -C "github key client:$CLIENT_NAME at $DATE ip:$IP " -f "$DIR/id_ed25519_github" -N '';then

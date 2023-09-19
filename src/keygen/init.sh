@@ -1,7 +1,5 @@
 #!/bin/bash
-
-
-init(){
+init() {
     # default hostname
     CLIENT_NAME=$(cat /etc/hostname)
     # default key dir
