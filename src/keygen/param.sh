@@ -42,4 +42,10 @@ param_parse(){
         esac
         shift
     done
+
+    if [ -d $DIR ]; then
+        info "$DIR exist"
+    else
+        mkdir -p $DIR
+    fi
 }
