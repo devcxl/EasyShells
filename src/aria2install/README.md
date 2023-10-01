@@ -21,7 +21,7 @@ install           安装Aria2
 
 ## 安装
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/aria2install.sh) install`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/aria2install.sh) install`
 
 
 ## 修改配置
@@ -34,7 +34,7 @@ configuration path `/etc/aria2/aria2.conf`
 
 ## 卸载
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/Aria2Install@master/releases/aria2install.sh) remove`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/aria2install.sh) remove`
 
 
 ## 相关

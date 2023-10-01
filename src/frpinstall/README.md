@@ -29,20 +29,20 @@ client                  FRPC相关option:
 
 ### Install 
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) client -i`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) client -i`
 
 ### Remove
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) client -rm`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) client -rm`
 
 ### Version
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) client -v`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) client -v`
 
 
 ### Upgrade
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) client -u`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) client -u`
 
 ### Configuration
 
@@ -60,20 +60,20 @@ client                  FRPC相关option:
 
 ### Install 
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) server -i`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) server -i`
 
 ### Remove
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) server -rm`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) server -rm`
 
 ### Version
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) server -v`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) server -v`
 
 
 ### Upgrade
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/frpinstall.sh) server -u`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/frpinstall.sh) server -u`
 
 ### Configuration
 
