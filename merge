@@ -44,6 +44,7 @@ server_parameters(){
 
 main(){
     server_parameters "$@"
+    mkdir -p releases
     echo "#!/usr/bin/env bash" > "releases/$RELEASE.sh"
     for file in $(cat "src/$DIR/main.sh" | grep -Eo "(deps):[-A-Za-z0-9+&@#/%?=~_|\!:,.;]+" | sed 's/deps://g');do
         cat "src/$file" >> "releases/$RELEASE.sh"
