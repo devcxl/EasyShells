@@ -30,7 +30,7 @@ jobs:
                 id: build
                 run: |
                     bash releases.sh
-                    echo "tag_name=$(date +%s)" >> $GITHUB_OUTPUT
+                    echo "tag_name=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
 
             -   name: Create release
                 id: create_release
