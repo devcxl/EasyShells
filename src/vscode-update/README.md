@@ -12,7 +12,7 @@
 
 ## 使用方式
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/vscode-update.sh)`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/vscode-update.sh)`
 
 
 脚本会将最新版本VSCode安装到 `$INSTALL_DIR`目录。（INSTALL_DIR的默认值是：`$HOME/apps/`）

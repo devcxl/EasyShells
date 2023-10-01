@@ -28,8 +28,8 @@ server                          为服务器生成rsa类型4096长度的key
 
 ## 生成Github私钥
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/keygen.sh) github`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/keygen.sh) github`
 
 ## 生成访问服务器的私钥并copy到远程服务器
 
-`bash <(curl -L https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/releases/keygen.sh) server -s server_alias_name -C user@192.168.1.1`
+`bash <(curl -L https://github.com//devcxl/EasyShells/releases/download/2023-10-01/keygen.sh) server -s server_alias_name -C user@192.168.1.1`

@@ -4,7 +4,6 @@ EasyShells, 旨在更方便的使用Linux系统，简化复杂操作
 
 > 一个脚本能搞定的事，为什么还要敲那么多命令？
 
-CDN: `https://cdn.jsdelivr.net/gh/devcxl/EasyShells@master/`
 
 ## 目录
 
