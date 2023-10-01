@@ -1,0 +1,64 @@
+name: release
+
+on:
+    workflow_dispatch: # allows manual triggering
+        inputs:
+            create_release:
+                description: 'Create new release'
+                required: true
+                type: boolean
+
+    push:
+        branches:
+            - master
+        paths: [ '.github/workflows/**', '**/*.sh' ]
+
+    pull_request:
+        types: [ opened, synchronize, reopened ]
+        paths: [ '.github/workflows/**', '**/*.sh' ]
+
+jobs:
+    release:
+        if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || github.event.inputs.create_release == 'true' }}
+
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v3
+
+            -   name: Build
+                id: build
+                run: |
+                    bash releases.sh
+                    echo "tag_name=$(date +%s)" >> $GITHUB_OUTPUT
+
+            -   name: Create release
+                id: create_release
+                uses: anzz1/action-create-release@v1
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    tag_name: ${{ steps.build.outputs.tag_name }}
+                    release_name: release-${{ steps.build.outputs.tag_name }}
+
+            -   name: Upload release
+                id: upload_release
+                uses: actions/github-script@v3
+                with:
+                    github-token: ${{secrets.GITHUB_TOKEN}}
+                    script: |
+                        const path = require('path');
+                        const fs = require('fs');
+                        const release_id = '${{ steps.create_release.outputs.id }}';
+                        for (let file of await fs.readdirSync('./releases/')) {
+                          if (path.extname(file) === '.sh') {
+                            console.log('uploadReleaseAsset', file);
+                            await github.repos.uploadReleaseAsset({
+                              owner: context.repo.owner,
+                              repo: context.repo.repo,
+                              release_id: release_id,
+                              name: file,
+                              data: await fs.readFileSync(`./releases/${file}`)
+                            });
+                          }
+                        }
