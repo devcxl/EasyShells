@@ -32,3 +32,6 @@ alias py-install='pip install -r requirements.txt'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -l -a'
+
+# Fixing the npm install timeout issue on an IPv6 network.
+alias npm="node --dns-result-order=ipv4first $(which npm)"
