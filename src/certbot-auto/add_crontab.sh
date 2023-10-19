@@ -1,1 +1,2 @@
-# (crontab -l ; echo "0 1 * * * /path/to/myscript.sh") | crontab -
+#!/bin/bash
+(crontab -l ; echo "0 */61 * * * /usr/local/bin/certbot renew") | crontab -
