@@ -35,3 +35,5 @@ alias lla='ls -l -a'
 
 # Fixing the npm install timeout issue on an IPv6 network.
 alias npm="node --dns-result-order=ipv4first $(which npm)"
+# Clean up .bash_history file
+alias history_norepeat="awk '!seen[$0]++' ~/.bash_history > ~/.bash_history_temp && mv ~/.bash_history_temp ~/.bash_history"
