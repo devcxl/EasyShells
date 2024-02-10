@@ -8,22 +8,27 @@ df -h | awk '$NF=="/"{printf "磁盘使用: %d/%dGB (%s)\n", $3,$2,$5}'
 alias uuid='cat /proc/sys/kernel/random/uuid'
 alias uuid-='cat /proc/sys/kernel/random/uuid | sed "s/-//g"'
 
-# deps scrcpy
-# https://github.com/Genymobile/scrcpy/wiki/README.zh-Hans
-alias scrcpy='scrcpy --push-target /storage/emulated/0/Download/ -m 1080 -b 4M --hid-keyboard --turn-screen-off'
+
+if [ -n "$(command -v Xorg)" ] || [ -n "$(command -v Wayland)" ]; then
+    # deps scrcpy
+    # https://github.com/Genymobile/scrcpy/wiki/README.zh-Hans
+    alias scrcpy='scrcpy --push-target /storage/emulated/0/Download/ -m 1080 -b 4M --hid-keyboard --turn-screen-off'
+
+    # deps docker
+    alias redis-server='docker run --rm -d --network host redis:5-alpine redis-server --requirepass 123456'
+    alias mysql-server='docker run --rm -d --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -e TZ=Asia/Shanghai --network host mysql:5.7.31 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci'
+
+    # befor `bash <(curl -L https://github.com/devcxl/EasyShells/releases/download/2023-10-18/vscode-update.sh)`
+    alias code='$HOME/apps/VSCode-linux-x64/bin/code'
+
+fi
+
 
 # deps git
 alias git-proxy='git config --global http.proxy socks://127.0.0.1:1089'
 alias git-unproxy='git config --global --unset https.proxy'
 alias git-user='git config user.name'
 alias git-mail='git config user.email'
-
-# deps docker
-alias redis-server='docker run --rm -d --network host redis:5-alpine redis-server --requirepass 123456'
-alias mysql-server='docker run --rm -d --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -e TZ=Asia/Shanghai --network host mysql:5.7.31 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci'
-
-# befor `bash <(curl -L https://github.com/devcxl/EasyShells/releases/download/2023-10-18/vscode-update.sh)`
-alias code='$HOME/apps/VSCode-linux-x64/bin/code'
 
 # Python export & install deps
 alias py-export='pip freeze > requirements.txt'
