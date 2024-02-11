@@ -8,6 +8,7 @@ df -h | awk '$NF=="/"{printf "磁盘使用: %d/%dGB (%s)\n", $3,$2,$5}'
 alias uuid='cat /proc/sys/kernel/random/uuid'
 alias uuid-='cat /proc/sys/kernel/random/uuid | sed "s/-//g"'
 
+export EDITOR=vim
 
 if [ -n "$(command -v Xorg)" ] || [ -n "$(command -v Wayland)" ]; then
     # deps scrcpy
