@@ -1,6 +1,6 @@
 #!/bin/bash
 # 默认安装位置
-INSTALL_DIR="$HOME/apps/"
+INSTALL_DIR="$HOME/apps"
 get_download_url(){
     # 通过curl模拟请求获取最新版本vscode实际下载地址
     RE302=$(curl -s 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' -H 'Accept-Language: zh-CN' -H 'Accept-Encoding: gzip, deflate, br' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: none' -H 'Sec-Fetch-User: ?1' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache')
@@ -50,7 +50,7 @@ cat > $HOME/.local/share/applications/code.desktop <<EOF
 Name=Visual Studio Code
 Comment=Code Editing. Redefined.
 GenericName=Text Editor
-Exec=$INSTALL_DIR/VSCode-linux-x64/bin/code --unity-launch %F
+Exec=$INSTALL_DIR/VSCode-linux-x64/bin/code %F
 Icon=$INSTALL_DIR/VSCode-linux-x64/resources/app/resources/linux/code.png
 Type=Application
 StartupNotify=false
